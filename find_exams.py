@@ -5,8 +5,8 @@ import re
 
 
 def getCourse(line):
-    l_name, c_name = line.rstrip().split(",")    ##EE1
-    return c_name, l_name   #EE2
+    l_name, c_name = line.rstrip().split("/")    ##EE1
+    return c_name   #EE2
 
 def getCoursesForLects(lectsfn):
     courses = {}  # dictionary: for each lect returns list of courses
@@ -14,7 +14,7 @@ def getCoursesForLects(lectsfn):
     for line in lf:
         lect, course = getCourse(line)
         if lect in courses: # is the lecturer in the dictionary
-            courses[lect].append(lect)  # add course to the list ##EE3
+            courses.append(course)  # add course to the list ##EE3
         else:
             courses[lect] = [course]  
     lf.close()
