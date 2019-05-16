@@ -1,5 +1,5 @@
 import unittest
-import find_exams.py
+import find_exams
 
 class TestExclude(unittest.TestCase):
 
